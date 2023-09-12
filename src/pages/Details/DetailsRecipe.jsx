@@ -33,16 +33,15 @@ export const DetailsRecipe = () => {
       <div className="flex flex-row justify-between items-center mx-auto mt-10 sm:w-4/6">
         <div className="flex flex-row gap-3">
           <div>
-            <img src={recipe.imageUrl} width={75} height={75} alt="" className="rounded-full" />
+            <img src={recipe.imageUrl} width={75} alt="" className="rounded-full h-16" />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col justify-center">
             <div className="font-bold text-lg">David Font</div>
             <div className="text-sm text-gray-700 font-medium">CEO de Umai</div>
           </div>
         </div>
 
         <div className="flex flex-row items-center gap-3">
-          <MdFavoriteBorder size={28} />
           <AiFillPrinter size={28} />
           <AiOutlineShareAlt size={28} />
         </div>

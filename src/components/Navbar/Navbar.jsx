@@ -33,7 +33,7 @@ export const Navbar = () => {
           <HiOutlineMenu name={open ? 'close' : 'menu'} />
         </div>
 
-        <ul className={`z-10 md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-16 ' : 'top-[-490px]'}`}>
+        <ul className={`z-10 md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-[#fffced] md:z-auto left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-16 ' : 'top-[-490px]'}`}>
           {
             Links.map((link) => (
               <li key={link.name} className='md:ml-8 text-lg font-medium md:my-0 my-7'>

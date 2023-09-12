@@ -4,7 +4,7 @@ import profile from '../../../assets/icons/profile.png'
 import { route } from '../../../models/route.model'
 
 export const RecipeItem = ({ recipes, search }) => {
-
+  console.log(recipes)
   return (
     <div className="md:columns-2 lg:columns-3 2xl:columns-4">
       {
