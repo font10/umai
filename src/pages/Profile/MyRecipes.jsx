@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { getRecipesByUser } from '../../services/recipesService';
 import { RecipeItem } from './RecipeItem';
+import { useGetUserId } from '../../hooks/useGetUserId/useGetUserId';
 
 export const MyRecipes = () => {
     
   const [recipes, setRecipes] = useState([]);
   const [showAlert, setShowAlert] = useState(false)
   const [msg, setMsg] = useState(false)
+  const id = useGetUserId()
 
   useEffect(() => {    
-    getRecipesByUser('admin')
+    getRecipesByUser(id)
       .then( ({response, success}) => {
         console.log(response)
         if(success) { setRecipes(response.recipe); setMsg('Borrado correctamente'); }

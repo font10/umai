@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import makeAnimated from 'react-select/animated';
 import Select from "react-select";
-import { addRecipe, updateRecipe, uploadImageCloudi } from '../../../services/recipesService'
+import { updateRecipe, uploadImageCloudi } from '../../../services/recipesService'
 import { Toast } from '../../../components/Toast/Toast'
-import { useGetUserId } from '../../../hooks/useGetUserId/useGetUserId';
 import { Zoom, toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom';
 import { IngredientesItem } from '../Items/IngredientesItem';
@@ -14,7 +13,6 @@ import { categoriesAddList } from '../../../utils/constants'
 export const FormUpdateRecipe = ({ preview, image, recipe, setRecipe }) => {
     const [loading, setLoading] = useState(false)
 
-    const userID = useGetUserId();
     const navigate = useNavigate();
     const animatedComponents = makeAnimated();
 
