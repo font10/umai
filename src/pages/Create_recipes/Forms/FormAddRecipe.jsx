@@ -15,6 +15,7 @@ export const FormAddRecipe = ({ preview, image }) => {
     const userID = useGetUserId();
     const navigate = useNavigate();
     const animatedComponents = makeAnimated();
+    const username = window.localStorage.getItem("username")
 
     const [loading, setLoading] = useState(false)
     const [recipe, setRecipe] = useState({
@@ -26,7 +27,8 @@ export const FormAddRecipe = ({ preview, image }) => {
         category: '',
         description: '',
         servers: 1,
-        userOwner: userID
+        userOwner: userID,
+        author: username
     })
 
     const uploadImage = async (evt) => {
@@ -78,11 +80,13 @@ export const FormAddRecipe = ({ preview, image }) => {
     };
 
     const createRecipe = () => {
+        console.log(recipe)
         if (recipe.imageUrl) {
             try {
                 addRecipe(recipe)
                     .then(res => {
-                        if (res && res.status === 200 && res.statusText === 'OK') {
+                        console.log(res)
+                        if (res && res.status === 200) {
                             setLoading(false)
                             toast.success('Recipe added successfully', {
                                 position: toast.POSITION.TOP_CENTER,

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom';
 import { Form } from '../../Auth/index'
@@ -6,7 +5,6 @@ import axios from 'axios'
 import { useForm } from "react-hook-form";
 import { ToastContainer, Zoom, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import { useStateContext } from '../../../context/userContext';
 
 export const Login = () => {
 
@@ -15,16 +13,16 @@ export const Login = () => {
     const handleError = (errors) => {};
     const psw = watch('password')
     const [_, setCookies] = useCookies(["access_token"]);
-    const { putUsername } = useStateContext()
 
     const handleRegistration = async (data) => { 
         const { username, password } = data
         try {
             const { data } = await axios.post("http://localhost:5000/auth/login", { username, password });
+            console.log(data)
             if(data.token) {
                 setCookies('access_token', data.token);
                 window.localStorage.setItem("userID", data.userID);
-                putUsername(data.name)
+                window.localStorage.setItem("username", data.name);
                 navigate("/");
             } else {
                 notify(data.error)

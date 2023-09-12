@@ -1,10 +1,9 @@
 import React from 'react'
 import { profile, instagram, facebook, twitter } from '../../utils/images/index'
-import { useStateContext } from '../../context/userContext'
 import { MyRecipes } from './MyRecipes'
 
 export const Profile = () => {
-  const { username } = useStateContext()
+  const username = window.localStorage.getItem("username");
 
   return (
     <div className='flex flex-col justify-center items-center'>

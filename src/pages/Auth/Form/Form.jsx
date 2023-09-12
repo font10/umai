@@ -62,12 +62,9 @@ export const Form = ({ register, errors, watch, psw, label, onSubmit }) => {
                               </div>
                             : null
                     }
-                    {
-                        Object.keys(errors).length > 0
-                            ? <button type='submit' className='bg-gray-300 w-full px-6 py-2 mt-5 rounded-md text-white font-medium' disabled>{label}</button>
-                            : <button type='submit' className='bg-orange-300 w-full px-6 py-2 mt-5 rounded-md text-white font-medium'>{label}</button>
-                          
-                    }
+                    
+                    <button type='submit' className='bg-amber-400 hover:bg-amber-300 w-full px-6 py-2 mt-5 rounded-md text-white font-medium'>{label}</button>   
+                    
                     {
                         label === 'Login'
                             ? <div className='flex flex-row justify-center mb-7 sm:mb-0 mt-10'>

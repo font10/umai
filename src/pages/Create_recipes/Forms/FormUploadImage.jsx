@@ -21,7 +21,7 @@ export const FormUploadImage = ({ image, setPreview, preview, setImage}) => {
                 ? <img src={preview} alt="recipe pic" />
                 : (<div className='flex-col w-full flex justify-center items-center'>
                     <div className='text-lg mb-6 text-gray-800 font-medium w-[150px] flex-wrap gap-x-2 flex items-center justify-center'>Select <span className='text-cyan-600'> file</span> to upload</div>
-                    <div className='text-sm text-gray-400'>Supports: JPEG,G</div>
+                    <div className='text-sm text-gray-400'>Supports: JPEG, PNG</div>
                 </div>
                 )
             }

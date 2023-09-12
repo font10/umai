@@ -2,7 +2,6 @@ import React from 'react'
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai'
 
 export const IngredientesItem = ({ recipe, setRecipe }) => {
-  console.log(recipe)
 
   const handleIngredientChange = (evt, idx) => {
     const { value } = evt.target;

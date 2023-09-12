@@ -6,7 +6,6 @@ import { Filter } from './Items/Filter';
 export const Home = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('')
-  const [categorySelected, setCategorySelected] = useState('Todas')
 
   useEffect(() => {
     getRecipes()
@@ -26,7 +25,7 @@ export const Home = () => {
       </div>
       <div className='flex flex-col xl:flex-row mt-8'>
         <div className='flex mt-5 xl:mt-2'>
-          <RecipeItem recipes={recipes} category={categorySelected} search={search} />
+          <RecipeItem recipes={recipes}  search={search} />
         </div>
       </div>
     </div>

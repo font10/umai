@@ -3,7 +3,7 @@ import getCookie from './cookies';
 
 export async function getRecipes () {
     try {
-        const response = await axios.get('https://umai-api.onrender.com/recipes');
+        const response = await axios.get('http://localhost:5000/recipes');
         if(response.status === 200) {
             return { response: response.data, success: true }
         } 
@@ -14,7 +14,8 @@ export async function getRecipes () {
 
 export async function getRecipesByUser ({ author }) {
     try {
-        const response = await axios.get('https://umai-api.onrender.com/recipes/myRecipes/645a4b106921ecfb0a887f0a');
+        const response = await axios.get('https://umai-api.onrender.com/recipes/myRecipes/64f6fe748efda03ac5a1e5b9');
+        
         if(response.status === 200) {
             return { response: response.data, success: true }
         } 
@@ -46,10 +47,11 @@ export async function addRecipe (recipe ) {
     }  
 }
 
-export async function updateRecipe (recipe, id ) {
+export async function updateRecipe (recipe) {
+    const id = recipe._id
     const jwt = getCookie('access_token')
     try {
-        const response = await axios.put(('https://umai-api.onrender.com/recipes/' + id), recipe, {
+        const response = await axios.put(('http://localhost:5000/recipes/' + id), recipe, {
             headers: { authorization: jwt }
         })
         return response

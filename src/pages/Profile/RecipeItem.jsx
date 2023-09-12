@@ -40,7 +40,7 @@ export const RecipeItem = ({ recipes, setShowAlert }) => {
                 <div className='flex flex-wrap items-center gap-2'>
 
                   <img src={profile} alt='icon profile' width={30} />
-                  <span className='text-white text-sm font-medium font-bubblegum'>{recipe.author}</span>
+                  <span className='text-white text-sm font-medium font-bubblegum'>{recipe.name}</span>
                 </div>
               </div>
             </div>
