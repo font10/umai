@@ -33,7 +33,7 @@ export const Navbar = () => {
           <HiOutlineMenu name={open ? 'close' : 'menu'} />
         </div>
 
-        <ul className={`z-10 md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-[#fffced] md:z-auto left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-16 ' : 'top-[-490px]'}`}>
+        <ul className={`z-10 md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-[#fffced] md:bg-transparent md:z-auto left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-16 ' : 'top-[-490px]'}`}>
           {
             Links.map((link) => (
               <li key={link.name} className='md:ml-8 text-lg font-medium md:my-0 my-7'>
@@ -41,7 +41,7 @@ export const Navbar = () => {
               </li>
             ))
           }
-          { !cookies.access_token ? (<Link to={route.login.path} className='bg-amber-400 px-5 py-2 rounded-md text-white font-medium text-md ml-5 font-bahnschrift'>Login/Register</Link>) : <Link to={route.login.path} onClick={logout} className='bg-amber-400 px-5 py-2 rounded-md text-white font-medium text-md ml-5'>Logout</Link> }
+          { !cookies.access_token ? (<Link to={route.login.path} className='bg-amber-400 px-5 py-2 rounded-md text-white font-medium text-md  ml-0 md:ml-5 font-bahnschrift'>Login/Register</Link>) : <Link to={route.login.path} onClick={logout} className='bg-amber-400 px-5 py-2 rounded-md text-white font-medium text-md ml-0 md:ml-5'>Logout</Link> }
         </ul>
       </div>
     </div>
